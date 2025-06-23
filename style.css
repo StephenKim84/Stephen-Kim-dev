@@ -34,7 +34,7 @@ body, html {
 
 /* 메인 화면 */
 .hero {
-    background-image: url('https://source.unsplash.com/1600x900/?city,night');
+    background-image: url('https://source.unsplash.com/1600x900/?rain,city,night');
     background-size: cover;
     background-position: center;
     height: 100vh;
