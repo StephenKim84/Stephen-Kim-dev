@@ -4,6 +4,34 @@
     <meta charset="UTF-8">
     <title>나의 멋진 홈페이지</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .hero {
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            position: relative;
+            color: white;
+            display: flex;
+            flex-direction: column;
+        }
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.3);
+            z-index: 1;
+        }
+        .hero-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            z-index: 2;
+        }
+    </style>
 </head>
 <body>
 
@@ -18,12 +46,22 @@
 
         <div class="hero-content">
             <h1>나의 멋진 홈페이지</h1>
-            <p>매일 바뀌는 배경 이미지와 깔끔한 디자인</p>
-            <a href="about.html" class="btn">더 알아보기</a>
+            <p>Bing 오늘의 이미지가 배경으로 자동 적용됩니다.</p>
         </div>
 
     </div>
 
+<script>
+    fetch('https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=en-US')
+        .then(response => response.json())
+        .then(data => {
+            const imageUrl = 'https://www.bing.com' + data.images[0].url;
+            document.querySelector('.hero').style.backgroundImage = `url('${imageUrl}')`;
+        })
+        .catch(err => {
+            console.error('Bing 이미지 불러오기 실패:', err);
+        });
+</script>
+
 </body>
 </html>
-
