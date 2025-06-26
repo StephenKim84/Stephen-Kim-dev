@@ -4,7 +4,7 @@
 <title>사랑의 미니게임</title>
 <style>
     body {
-        background: url('Asset/room.png') no-repeat center center;
+        background: url('assets/room.png') no-repeat center center;
         background-size: cover;
         display: flex;
         flex-direction: column;
@@ -66,10 +66,10 @@
 <body><div class="navbar">
     <a href="index.html">홈으로 돌아가기</a>
 </div><div id="gameArea">
-    <img id="character" src="Asset/character.png" alt="캐릭터">
-    <img class="treasure" style="top: 100px; left: 100px;" src="Asset/chest_closed.png">
-    <img class="treasure" style="top: 300px; left: 200px;" src="Asset/chest_closed.png">
-    <img class="treasure" style="top: 400px; left: 400px;" src="Asset/chest_closed.png">
+    <img id="character" src="assets/character.png" alt="캐릭터">
+    <img class="treasure" style="top: 100px; left: 100px;" src="assets/chest_closed.png">
+    <img class="treasure" style="top: 300px; left: 200px;" src="assets/chest_closed.png">
+    <img class="treasure" style="top: 400px; left: 400px;" src="assets/chest_closed.png">
 </div><div id="messageBox">보물상자를 찾아보세요!</div><script>
 const character = document.getElementById('character');
 const treasures = document.querySelectorAll('.treasure');
@@ -94,7 +94,7 @@ function checkCollision() {
         const tY = parseInt(treasure.style.top);
 
         if (Math.abs(posX - tX) < 30 && Math.abs(posY - tY) < 30) {
-            treasure.src = 'Asset/chest_open.png';
+            treasure.src = 'assets/chest_open.png';
             treasure.style.transform = 'scale(1.2)';
             messageBox.textContent = messages[index];
             found[index] = true;
