@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>미니게임 - 보물찾기</title>
+<style>
+    body { background: #222; display: flex; justify-content: center; align-items: center; height: 100vh; margin:0; }
+    #gameArea { position: relative; width: 500px; height: 500px; background: #444; border: 2px solid #fff; }
+    #character { width: 30px; height: 30px; background: red; position: absolute; top: 10px; left: 10px; }
+    #treasure { width: 30px; height: 30px; background: gold; position: absolute; top: 400px; left: 400px; }
+</style>
+</head>
+<body>
+
+<div id="gameArea">
+    <div id="character"></div>
+    <div id="treasure"></div>
+</div>
+
+<script>
+const character = document.getElementById('character');
+const treasure = document.getElementById('treasure');
+let posX = 10;
+let posY = 10;
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowUp') posY -= 10;
+    if (e.key === 'ArrowDown') posY += 10;
+    if (e.key === 'ArrowLeft') posX -= 10;
+    if (e.key === 'ArrowRight') posX += 10;
+
+    // 벽 밖으로 못 나가게
+    posX = Math.max(0, Math.min(470, posX));
+    posY = Math.max(0, Math.min(470, posY));
+
+    character.style.left = posX + 'px';
+    character.style.top = posY + 'px';
+
+    // 보물상자 위치 체크
+    const distX = Math.abs(posX - 400);
+    const distY = Math.abs(posY - 400);
+    if (distX < 30 && distY < 30) {
+        alert('축하합니다! 보물상자를 찾았습니다. 아내를 위한 사랑의 메시지 💌');
+    }
+});
+</script>
+
+</body>
+</html>
