@@ -207,3 +207,28 @@ body, html {
 .project p {
     color: #555;
 }
+
+/* Portfolio Project Cards */
+
+.project {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+}
+
+.project h2 {
+    color: #004e92;
+    margin-bottom: 10px;
+}
+
+.project p {
+    color: #555;
+    line-height: 1.6;
+}
