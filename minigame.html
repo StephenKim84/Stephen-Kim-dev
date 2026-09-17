@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>사랑의 미니게임</title>
+<title>Love Mini Game</title>
 <style>
     body {
         background: url('assets/room.png') no-repeat center center;
@@ -64,13 +64,13 @@
 </style>
 </head>
 <body><div class="navbar">
-    <a href="index.html">홈으로 돌아가기</a>
+    <a href="index.html">Go Back Home</a>
 </div><div id="gameArea">
     <img id="character" src="assets/character.png" alt="캐릭터">
     <img class="treasure" style="top: 100px; left: 100px;" src="assets/chest_closed.png">
     <img class="treasure" style="top: 300px; left: 200px;" src="assets/chest_closed.png">
     <img class="treasure" style="top: 400px; left: 400px;" src="assets/chest_closed.png">
-</div><div id="messageBox">보물상자를 찾아보세요!</div><script>
+</div><div id="messageBox">Find the Treasure Chest!</div><script>
 const character = document.getElementById('character');
 const treasures = document.querySelectorAll('.treasure');
 const messageBox = document.getElementById('messageBox');
@@ -80,9 +80,9 @@ let posY = 10;
 const step = 10;
 
 const messages = [
-    '사랑하는 아내, 항상 고맙고 사랑해요. 💖',
-    '우리 가족이 있어 정말 행복해요. 👨‍👩‍👧',
-    '당신과 함께하는 하루하루가 선물이에요. 🎁'
+    'y beloved wife, thank you for everything. I love you always. 💖',
+    'I’m truly happy because I have my family. 👨‍👩‍👧',
+    'Every day with you is a precious gift. 🎁'
 ];
 let found = [false, false, false];
 
